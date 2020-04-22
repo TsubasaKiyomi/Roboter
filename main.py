@@ -10,9 +10,6 @@ def greeting():
     return input("「こんにちわ,私の名前は roboter です。あなたの名前は？」\n名前を入力してください:  >>  ")
 
 
-greeting()
-
-
 # R:「私のおすすめは（レストラン名） です。[ユーザー名]さんは,このレストランはお好きですか？」と
 # [yes/no]」とターミナルに表示してユーザーの入力を待つ。
 # 入力１(string)レストラン名
@@ -34,9 +31,6 @@ def favorite_restaurant():
         elif answer == "no":
             False
             break
-
-
-favorite_restaurant()
 
 
 #     answers_deictinary = {
@@ -64,9 +58,6 @@ def hear_recommendations():
     return
 
 
-hear_recommendations()
-
-
 # R:「私のおすすめは（レストラン名） です。[ユーザー名]さんは,このレストランはお好きですか？」と
 # [yes/no]」とターミナルに表示してユーザーの入力を待つ。
 # 入力１(string)    ：レストラン名
@@ -91,9 +82,6 @@ def another_favorite_restaurant():
             break
 
 
-another_favorite_restaurant()
-
-
 # - [yes の場合](データベースで管理)
 #   R:「ユーザー名さんのおすすめレストランはありますか？」とターミナル表示しユーザーの（おすすめのレストラン名）入力を促す。
 # 入力(str)ユーザー名
@@ -102,9 +90,6 @@ another_favorite_restaurant()
 
 def another_hear_recommendations_yes():
     input("「{0}さんのおすすめレストランはありますか？」\n>>   ".format("ユーザー"))
-
-
-another_hear_recommendations_yes()
 
 
 # - [no の場合]
@@ -117,9 +102,6 @@ def another_hear_recommendations_no():
     input("「{0}さんのおすすめレストランはありますか？」\n>>   ".format("ユーザー"))
 
 
-another_hear_recommendations_no()
-
-
 # - 「ユーザー名さん。ありがとうございました。良い一日を。」とターミナルに表示する。
 # 入力(str)ユーザー名
 # 出力(str)「ありがとうございました。良い一日を。」とターミナルに表示する。
@@ -128,4 +110,10 @@ def last_greeting():
     print("「{0}さん。ありがとうございました。良い一日を。」".format("ユーザー"))
 
 
+greeting()
+favorite_restaurant()
+hear_recommendations()
+another_favorite_restaurant()
+another_hear_recommendations_yes()
+another_hear_recommendations_no()
 last_greeting()
