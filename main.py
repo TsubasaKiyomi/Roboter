@@ -6,6 +6,9 @@
 # ユーザーにターミナル上で[ユーザー名]を入力してもらう。
 
 
+import csv
+
+
 def greeting():
     return input("「こんにちわ,私の名前は roboter です。あなたの名前は？」\n名前を入力してください:  >>  ")
 
@@ -110,6 +113,37 @@ def last_greeting():
     print("「{0}さん。ありがとうございました。良い一日を。」".format("ユーザー"))
 
 
+# 入力したデータを[レストラン名] + [ユーザー人数] に分けて保存する。
+# 入力(str)レストラン名
+# 入力(int)レストランを選んだユーザー人数
+# 入力したデータを[レストラン名] + [ユーザー人数] を書き込む
+
+
+def writing():
+    with open("data.csv", "w") as csv_file:
+        fieldnames = ["restaurant_name", "count_number"]
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow(
+            {"restaurant_name": "American_restaurant",
+             "count_number": 3})
+        writer.writerow(
+            {"restaurant_name": "Japanese_restaurant",
+             "count_number": 8})
+
+
+# 入力したデータを[レストラン名] + [ユーザー人数] に分けて保存されたものを読み込む
+# 出力1(str)レストラン名
+# 出力２(int)レストランを選んだユーザー人数
+
+
+def reading():
+    with open("data.csv", "r") as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            print(row["restaurant_name"], row["count_number"])
+
+
 greeting()
 favorite_restaurant()
 hear_recommendations()
@@ -117,3 +151,5 @@ another_favorite_restaurant()
 another_hear_recommendations_yes()
 another_hear_recommendations_no()
 last_greeting()
+writing()
+reading()
